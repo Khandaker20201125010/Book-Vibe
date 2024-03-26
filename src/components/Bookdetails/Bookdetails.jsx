@@ -26,7 +26,7 @@ const Bookdetails = () => {
                     <h3 className='font-bold mt-10'>{category}</h3>
                     <p className='w-3/4 mt-10'><span className='font-bold'>Review:</span>{review}</p>
                     <div className=" mb-2 flex mt-10">
-                        <h1>Tag:</h1>
+                        <h1 className='font-bold'>Tag:</h1>
                         {tags && tags.length > 0 && tags.map((tag, index) => (
                             <span key={index} className="rounded-full px-6  font-semibold text-green-500 mr-2 inline-block">
                                 {tag}
@@ -54,8 +54,8 @@ const Bookdetails = () => {
                     </div>
                     
                     <div class="card-actions justify-start gap-10 mt-10">
-                        <button class="btn btn-outline">Listen</button>
-                        <button class="btn w-32 btn-info">Listen</button>
+                        <button class="btn btn-outline ">Read</button>
+                        <button class="btn w-32 btn-info text-white">Wishlist</button>
                         
                     </div>
                 </div>
