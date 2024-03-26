@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
 import icon from "../../assets/images/grade_FILL0_wght400_GRAD0_opsz24.png";
 const Bookcard = ({item}) => {
     const  {bookId,bookName,author,image,review,totalPages,rating,category,ags,publisher,yearOfPublishing,tags} = item ||{}; 
     return (
+        
+        <Link to={`/Bookdetails/${bookId}`}>
         <div>
             <div class="card w-full h-full bg-base-200 shadow-2xl p-10">
                 <figure><img className="h-[200px]" src={image} alt="Shoes" /></figure>
@@ -27,6 +30,7 @@ const Bookcard = ({item}) => {
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 
