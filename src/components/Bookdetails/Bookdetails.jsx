@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useBooksdata from '../Hooks/Booksdata'
+import Savetolocalstorage  from '../utlis/Savetolocalstorage'
+import { ToastContainer, toast } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
 const Bookdetails = () => {
     const [singleData, setSingleData] = useState({});
     const { bookId } = useParams();
     const { data, loading } = useBooksdata()
+    const handelBook = () => {
+        Savetolocalstorage(singleData);
+    };
     useEffect(() => {
         if (data) {
             const singleData = data.find((item) => item.bookId == bookId);
@@ -54,12 +60,13 @@ const Bookdetails = () => {
                     </div>
                     
                     <div class="card-actions justify-start gap-10 mt-10">
-                        <button class="btn btn-outline ">Read</button>
+                        <button onClick={handelBook} class="btn btn-outline ">Read</button>
                         <button class="btn w-32 btn-info text-white">Wishlist</button>
                         
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

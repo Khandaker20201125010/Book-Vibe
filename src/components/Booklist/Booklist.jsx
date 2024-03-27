@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Booklist = () => {
     return (
         <div>
@@ -9,7 +7,7 @@ const Booklist = () => {
                     <li>
                         <details>
                             <summary className='bg-green-500 hover:bg-green-500 font-bold text-white '>
-                             Short by
+                                Short by
                             </summary>
                             <ul class="p-2 bg-base-100 rounded-t-none ">
                                 <li><a className='bg-green-500 hover:bg-green-500 text-white'>Link 1</a></li>
@@ -19,15 +17,11 @@ const Booklist = () => {
                     </li>
                 </ul>
                 <div role="tablist" class="tabs tabs-lifted">
-  <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" />
-  <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">Tab content 1</div>
-
-  <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 2" checked />
-  <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">Tab content 2</div>
-
-  <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 3" />
-  <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">Tab content 3</div>
-</div>
+                    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" />
+                    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6"></div>
+                    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 2" checked />
+                    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6"></div>
+                </div>
             </div>
 
         </div>
