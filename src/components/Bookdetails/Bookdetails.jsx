@@ -10,6 +10,7 @@ const Bookdetails = () => {
     const [singleData, setSingleData] = useState({});
     const { bookId } = useParams();
     const { data, loading } = useBooksdata()
+    
 
     const handelBook = () => {
         saveToLocalStorage(singleData, 'Read', 'Read');
@@ -17,12 +18,12 @@ const Bookdetails = () => {
     
     const wishBook = () => {
         saveToLocalStorage(singleData, 'Wishlist', 'Wishlist');
+        
     };
     useEffect(() => {
         if (data) {
             const singleData = data.find((item) => item.bookId == bookId);
             setSingleData(singleData);
-
         }
 
     }, [data, bookId]);
@@ -42,7 +43,7 @@ const Bookdetails = () => {
                         <h1 className='font-bold'>Tag:</h1>
                         {tags && tags.length > 0 && tags.map((tag, index) => (
                             <span key={index} className="rounded-full px-6  font-semibold text-green-500 mr-2 inline-block">
-                                {tag}
+                                #{tag}
                             </span>
                         ))}
                     </div>

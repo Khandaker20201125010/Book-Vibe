@@ -1,4 +1,13 @@
+import BookListCard from "../BookListCard/BookListCard";
+import useLocalStorage from "../Hooks/Bookshow/useLocalStorage";
+import wishLocalStorage from "../Hooks/Bookshow/wishLocalStorage";
+import WishListCard from "../WishListCard/WishListCard";
+    
+
 const Booklist = () => {
+    const { localData } = useLocalStorage();
+    const { wishlData } = wishLocalStorage();
+
     return (
         <div>
             <div className='text-center items-center mt-20'>
@@ -16,11 +25,22 @@ const Booklist = () => {
                         </details>
                     </li>
                 </ul>
-                <div role="tablist" class="tabs tabs-lifted">
-                    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" />
-                    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6"></div>
-                    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 2" checked />
-                    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6"></div>
+                <div>
+
+                    <div role="tablist" class="tabs tabs-lifted">
+                        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Read Books" />
+                        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6 text-start ">
+                            {localData.map((data) => (<BookListCard key={data.bookid} data={data}></BookListCard>))}
+                        </div>
+
+                        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Wishlist Books" checked />
+                        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6 text-start ">
+                            {wishlData.map((jata) => (<WishListCard key={jata.bookid} jata={jata}></WishListCard>))}
+                        </div>
+
+
+                    </div>
+
                 </div>
             </div>
 
