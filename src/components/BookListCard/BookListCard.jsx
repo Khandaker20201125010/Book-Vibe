@@ -1,11 +1,15 @@
+import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { BiFile } from "react-icons/bi";
 import { FaUserFriends } from "react-icons/fa";
-const BookListCard = ({ data }) => {
-    const { bookName, author, image, review, totalPages, rating, category, ags, publisher, yearOfPublishing, tags } = data || {};
+import { Link } from 'react-router-dom';
+
+const WishListCard = ({data}) => {
+    const { bookId,bookName, author, image, review, totalPages, rating, category, ags, publisher, yearOfPublishing, tags } = data || {};
     return (
         <div>
-            <div class="card card-side bg-base-100 shadow-xl w-full h-full mt-20 max-sm:flex max-sm:flex-col  relative">
+        
+            <div class="card card-side bg-base-100 shadow-xl w-full h-full mt-20  max-sm:flex max-sm:flex-col  relative  ">
                 <figure><img className='p-10 ' src={image} alt="Movie" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">{bookName}</h2>
@@ -24,14 +28,17 @@ const BookListCard = ({ data }) => {
                         <h1 className='font-base flex '><span className=' flex gap-2'>Yearofpublishing :</span>{yearOfPublishing}</h1>
                     </div>
                     <div className='flex gap-10 text-base text-gray-400'>
-                        <h className="flex gap-2"><FaUserFriends></FaUserFriends>Publisher: {publisher}</h>
-                        <h className="flex gap-2"><BiFile></BiFile>Page {totalPages}</h>
+                    <h className="flex gap-2"><FaUserFriends></FaUserFriends>Publisher: {publisher}</h>
+                    <h className="flex gap-2"><BiFile></BiFile>Page {totalPages}</h>
                     </div>
-                    <div className='outline-dashed outline-1 text-gray-300 mt-5'></div>
+                   <div className='outline-dashed outline-1 text-gray-300 mt-5'></div>
                     <div class="card-actions mt-2 justify-start flex gap-5">
-                        <button className='btn rounded-full px-8 py-2 bg-sky-200 text-sky-400  font-bold'>Catagory:{category}</button>
-                        <button className='btn rounded-full px-8 py-2 bg-yellow-100 text-yellow-400  font-bold'>Rating:{rating}</button>
+                        <button className='rounded-full px-8 py-2 bg-sky-200 text-sky-400  font-bold'>Catagory:{category}</button>
+                        <button className='rounded-full px-8 py-2 bg-yellow-100 text-yellow-400  font-bold'>Rating:{rating}</button>
+                        <Link to={`/Bookdetails/${bookId}`}>
                         <button className='btn rounded-full px-8 py-2 bg-green-500 text-white  font-bold'>View Details</button>
+                        </Link>
+                        
                     </div>
                 </div>
             </div>
@@ -40,4 +47,4 @@ const BookListCard = ({ data }) => {
     );
 };
 
-export default BookListCard;
+export default WishListCard;
