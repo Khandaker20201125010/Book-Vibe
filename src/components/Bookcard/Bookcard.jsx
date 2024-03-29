@@ -6,7 +6,7 @@ const Bookcard = ({item}) => {
     return (
         <Link to={`/Bookdetails/${bookId}`}>
         <div>
-            <div class="card w-full h-full bg-base-200 shadow-2xl p-10">
+            <div class="card w-full h-full bg-base-200 shadow-2xl p-10 max-sm:flex max-sm:flex-col  relative">
                 <figure><img className="h-[200px]" src={image} alt="Shoes" /></figure>
                 <div class="card-body">
                 <div className=" mb-2">
