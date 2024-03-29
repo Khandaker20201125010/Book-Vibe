@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
 const Booksdata = () => {
-    const [data, setBooks] = useState([]);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            const res = await fetch("/books.json");
-            const data = await res.json();
-            setBooks(data); 
+        setLoading(true);
+            fetch("../../../public/books.json")
+            .then (res => res.json())
+            .then(data => setData(data))
             setLoading(false);
-        };
-
-        fetchData();
     }, []);
 
     return { data, loading };

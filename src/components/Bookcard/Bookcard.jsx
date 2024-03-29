@@ -18,7 +18,7 @@ const Bookcard = ({item}) => {
                     <p className='font-bold '>By:{author}</p>
                     <br />
                     <div className='outline-dashed outline-1 text-gray-300 mt-5'></div>
-                    <div class="card-actions justify-between">
+                    <div class="card-actions justify-between font-bold">
                         <h3>{category}</h3>
                         <div className="flex gap-2">
                         <h3>{rating}</h3>

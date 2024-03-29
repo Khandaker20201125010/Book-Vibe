@@ -1,12 +1,12 @@
 import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import UseChartBooks from '../UseCharBooks/UseChartBooks';
+import { getFromLocalStorage } from '../ultils/localStorage';
 
 const Readpages = () => {
-    const bookCharting = UseChartBooks();
-    console.log(bookCharting);
+    const bookCharting = getFromLocalStorage();
     
-    const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+    const colors = ['#0088FE', '#00C49F', '#FFBB28'];
 
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -24,7 +24,7 @@ const Readpages = () => {
         <BarChart
             width={1100}
             height={500}
-            data={bookCharting} // Pass the data fetched from UseChartBooks to the chart
+            data={bookCharting} 
             margin={{
                 top: 100,
                 right: 30,

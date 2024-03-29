@@ -2,26 +2,29 @@ import { useEffect, useState } from "react";
 import Booksdata from "../Hooks/Booksdata";
 
 import { getFromLocalStorage } from "../ultils/localStorage";
+import { useLoaderData } from "react-router-dom";
 const UseChartBooks = () => {
-    const books = Booksdata();
+  const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const books = useLoaderData();
     
     const [bookSave,setBookSave] =useState([])
+    const savedBook = [] 
+
       useEffect(()=>{
-        const storedBookIds = getFromLocalStorage();
-     
-        if(books.length >1){
-            const savedBook = ([])
-            console.log(books);
-        
+        const storedBookIds = getFromLocalStorage()
+        if( storedBookIds.length > 0){
+            // console.log(books)
             for (const id of storedBookIds){
-              const book = books?.find(book => book === id);
-                if(book){
-                  savedBook.push(book);
-                   
+              // const chartBook = books?.find(book => book === id);
+              console.log(id)
+                if(id){
+                  savedBook.push(id);   
+                  setBookSave(savedBook);   
                 }
    
             }  
-            setBookSave(savedBook);
+           
         }
        
 
