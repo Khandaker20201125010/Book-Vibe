@@ -5,7 +5,7 @@ const BookListCard = ({ data }) => {
     const { bookName, author, image, review, totalPages, rating, category, ags, publisher, yearOfPublishing, tags } = data || {};
     return (
         <div>
-            <div class="card card-side bg-base-100 shadow-xl w-full h-full mt-20">
+            <div class="card card-side bg-base-100 shadow-xl w-full h-full mt-20 max-sm:flex max-sm:flex-col  relative">
                 <figure><img className='p-10 ' src={image} alt="Movie" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">{bookName}</h2>

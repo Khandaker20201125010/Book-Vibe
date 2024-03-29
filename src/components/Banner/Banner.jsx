@@ -1,25 +1,19 @@
 import React from 'react';
-import ban from '../../assets/images/1.png';
+import ban from '../../assets/images/1.png'; 
 import { Link } from 'react-router-dom';
+
 const Banner = () => {
     return (
-        <div className=' w-full shadow-2xl font-bold rounded-3xl'>
-            <div className='flex'>
-                <div className='w-[100%] p-28'>
-                    <h1 className=' text-6xl '>Books to freshen up your bookshelf</h1>
-                    <div >
-                        <Link to = {`/Listed Books`}>
-                        <button  className='btn bg-green-500 text-white mt-10'>
-                        View The List
-                        </button>
-                        </Link>
-                       
-                    </div>
-                </div>
-                <div className='p-20 w-2/3'>
-                    <img src={ban} alt="" />
-                </div>
+        <div className=" md:flex bg-gray-100 rounded-xl mt-10 px-2 py-5 md:px-14 lg:px-32 lg:py-10">
+            <div className="lg:w-1/2 order-2 md:order-1 flex justify-end">
+                <img src={ban} alt="" />
             </div>
+            <div className="lg:w-1/2 mt-3 lg:mt-10">
+                <h3 className=" text-3xl lg:text-5xl font-bold mt-9 mx-2">Books to freshen up
+                    your bookshelf </h3>
+                <Link to="/listBooks"><button className="btn text-white bg-green-500 lg:mt-20 mt-5 mx-2">View The List</button> </Link>
+            </div>
+
 
 
         </div>

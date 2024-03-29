@@ -87,7 +87,7 @@ const Booklist = () => {
 
     return (
         <div>
-            <div className='text-center items-center mt-20'>
+            <div className='text-center items-center mt-20 max-sm:flex max-sm:flex-col  relative'>
                 <h1 className='text-2xl font-bold'>Books</h1>
                 <ul class="menu menu-horizontal px-1">
                     <li>
@@ -105,7 +105,7 @@ const Booklist = () => {
                 </ul>
                 <div>
 
-                    <div role="tablist" class="tabs tabs-lifted">
+                    <div role="tablist" class="tabs tabs-lifted max-sm:flex max-sm:flex-col  relative'">
                         <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Read Books" />
                         <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6 text-start ">
                             {localData.map((data) => (<BookListCard key={data.bookid} data={data}></BookListCard>))}

@@ -35,7 +35,7 @@ const Header = () => {
         </li>
     </>
     return (
-        <div class="navbar bg-base-100 mt-10 font-bold ">
+        <div class="navbar bg-base-100 mt-10 font-bold max-sm:flex max-sm:flex-col shadow-lg  relative ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">

@@ -32,7 +32,7 @@ export const saveToLocalStorage = (data, listType) => {
                 toast.error(`Book Already in Wishlist`);
             }
         } else {
-            toast.error(`Cannot add to Wishlist. Interact with Read list first.`);
+            toast.error(`Books are already in Read Book`);
         }
     }
 };
