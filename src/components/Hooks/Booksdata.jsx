@@ -7,7 +7,7 @@ const Booksdata = () => {
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            const res = await fetch("../../../public/books.json");
+            const res = await fetch("./books.json");
             const data = await res.json();
             setBooks(data); 
             setLoading(false);

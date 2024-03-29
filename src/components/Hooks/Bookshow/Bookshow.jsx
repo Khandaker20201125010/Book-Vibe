@@ -9,7 +9,7 @@ const Bookshow = () => {
             <div>
                 <h1 className='text-4xl text-center mt-20 font-bold'>Books</h1>
             </div>
-            <div className='mt-20 grid grid-cols-3 gap-8 max-sm:flex max-sm:flex-col shadow-lg  relative '>
+            <div className='mt-20 grid grid-cols-3 gap-8'>
                 {data.map ((item) => (<Bookcard key={item.bookId} item={item}></Bookcard>))}
 
             </div>

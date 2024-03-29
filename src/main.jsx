@@ -13,6 +13,7 @@ import Bookdetails from './components/Bookdetails/Bookdetails';
 import Error from './components/Error/Error';
 import Premium from './components/Premium/Premium';
 import Whychoseus from './components/Whychoseus/Whychoseus';
+import Bookshow from './components/Hooks/Bookshow/Bookshow';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         element:<Booklist></Booklist>
      
       },
+     
       {
         path: "/Pages to Read",
         element:<Readpages></Readpages>

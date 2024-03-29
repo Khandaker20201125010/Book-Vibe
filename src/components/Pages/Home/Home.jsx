@@ -1,6 +1,5 @@
 import Banner from "../../Banner/Banner";
 import Bookshow from "../../Hooks/Bookshow/Bookshow";
-
 const Home = () => {
     return (
         <div>
