@@ -3,8 +3,7 @@ import Booksdata from '../Booksdata';
 import Bookcard from '../../Bookcard/Bookcard';
 
 const Bookshow = () => {
-    const { data, loading } = Booksdata(); 
-    console.log(data);
+    const { data} = Booksdata(); 
     return (
         <div>
             <div>

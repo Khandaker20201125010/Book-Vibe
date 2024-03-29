@@ -1,5 +1,6 @@
-import React from 'react';
-
+import { CiLocationOn } from "react-icons/ci";
+import { BiFile } from "react-icons/bi";
+import { FaUserFriends } from "react-icons/fa";
 const BookListCard = ({ data }) => {
     const { bookName, author, image, review, totalPages, rating, category, ags, publisher, yearOfPublishing, tags } = data || {};
     return (
@@ -19,12 +20,18 @@ const BookListCard = ({ data }) => {
                                 #{tag}
                             </span>
                         ))}
-                       
-                        <h1 className='font-base flex '><span className=' flex gap-2'>YearofPublishing :</span>{yearOfPublishing}</h1>
+                        <CiLocationOn></CiLocationOn>
+                        <h1 className='font-base flex '><span className=' flex gap-2'>Yearofpublishing :</span>{yearOfPublishing}</h1>
                     </div>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div class="card-actions justify-end">
-
+                    <div className='flex gap-10 text-base text-gray-400'>
+                        <h className="flex gap-2"><FaUserFriends></FaUserFriends>Publisher: {publisher}</h>
+                        <h className="flex gap-2"><BiFile></BiFile>Page {totalPages}</h>
+                    </div>
+                    <div className='outline-dashed outline-1 text-gray-300 mt-5'></div>
+                    <div class="card-actions mt-2 justify-start flex gap-5">
+                        <button className='btn rounded-full px-8 py-2 bg-sky-200 text-sky-400  font-bold'>Catagory:{category}</button>
+                        <button className='btn rounded-full px-8 py-2 bg-yellow-100 text-yellow-400  font-bold'>Rating:{rating}</button>
+                        <button className='btn rounded-full px-8 py-2 bg-green-500 text-white  font-bold'>View Details</button>
                     </div>
                 </div>
             </div>

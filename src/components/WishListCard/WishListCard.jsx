@@ -1,7 +1,11 @@
 import React from 'react';
+import { CiLocationOn } from "react-icons/ci";
+import { BiFile } from "react-icons/bi";
+import { FaUserFriends } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const WishListCard = ({jata}) => {
-    const { bookName, author, image, review, totalPages, rating, category, ags, publisher, yearOfPublishing, tags } = jata || {};
+    const { bookId,bookName, author, image, review, totalPages, rating, category, ags, publisher, yearOfPublishing, tags } = jata || {};
     return (
         <div>
             <div class="card card-side bg-base-100 shadow-xl w-full h-full mt-20">
@@ -19,11 +23,21 @@ const WishListCard = ({jata}) => {
                                 #{tag}
                             </span>
                         ))}
+                        <CiLocationOn></CiLocationOn>
                         <h1 className='font-base flex '><span className=' flex gap-2'>Yearofpublishing :</span>{yearOfPublishing}</h1>
                     </div>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div class="card-actions justify-end">
-
+                    <div className='flex gap-10 text-base text-gray-400'>
+                    <h className="flex gap-2"><FaUserFriends></FaUserFriends>Publisher: {publisher}</h>
+                    <h className="flex gap-2"><BiFile></BiFile>Page {totalPages}</h>
+                    </div>
+                   <div className='outline-dashed outline-1 text-gray-300 mt-5'></div>
+                    <div class="card-actions mt-2 justify-start flex gap-5">
+                        <button className='rounded-full px-8 py-2 bg-sky-200 text-sky-400  font-bold'>Catagory:{category}</button>
+                        <button className='rounded-full px-8 py-2 bg-yellow-100 text-yellow-400  font-bold'>Rating:{rating}</button>
+                        <Link to={`/Bookdetails/${bookId}`}>
+                        <button className='btn rounded-full px-8 py-2 bg-green-500 text-white  font-bold'>View Details</button>
+                        </Link>
+                        
                     </div>
                 </div>
             </div>

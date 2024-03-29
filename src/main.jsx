@@ -10,10 +10,14 @@ import Home from './components/Pages/Home/Home';
 import Booklist from './components/Booklist/Booklist';
 import Readpages from './components/Readpages/Readpages';
 import Bookdetails from './components/Bookdetails/Bookdetails';
+import Error from './components/Error/Error';
+import Premium from './components/Premium/Premium';
+import Whychoseus from './components/Whychoseus/Whychoseus';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",
@@ -31,10 +35,21 @@ const router = createBrowserRouter([
      
       },
       {
+        path: "/Premium",
+        element:<Premium></Premium>
+     
+      },
+      {
+        path: "/Whychoseus",
+        element:<Whychoseus></Whychoseus>
+     
+      },
+      {
         path: "/Bookdetails/:bookId",
         element:<Bookdetails></Bookdetails>
      
       },
+      
      
     ],
   },

@@ -23,6 +23,16 @@ const Header = () => {
         } to="/Pages to Read">
             Pages to Read</NavLink>
         </li>
+        <li><NavLink className={({ isActive }) =>
+            isActive ? 'btn btn-outline btn-warning' : 'font-bold'
+        } to="/Premium">
+            Premium</NavLink>
+        </li>
+        <li><NavLink className={({ isActive }) =>
+            isActive ? 'btn btn-outline btn-error' : 'font-bold'
+        } to="/Whychoseus">
+           Why Chose Us</NavLink>
+        </li>
     </>
     return (
         <div class="navbar bg-base-100 mt-10 font-bold ">
@@ -45,7 +55,7 @@ const Header = () => {
             <div class="navbar-end gap-5 ">
                 <button className="btn bg-green-500 text-white w-28">Sign in</button>
                 <button class="btn btn-info text-white w-28">Sign up</button>
-                
+
             </div>
         </div>
     );

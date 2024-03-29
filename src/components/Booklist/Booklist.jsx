@@ -1,12 +1,89 @@
+import { useEffect, useState } from "react";
 import BookListCard from "../BookListCard/BookListCard";
 import useLocalStorage from "../Hooks/Bookshow/useLocalStorage";
 import wishLocalStorage from "../Hooks/Bookshow/wishLocalStorage";
 import WishListCard from "../WishListCard/WishListCard";
-    
+import { useLoaderData } from "react-router-dom";
 
 const Booklist = () => {
+    
     const { localData } = useLocalStorage();
     const { wishlData } = wishLocalStorage();
+    const [bookReads, setBookReads] = useState([]);
+        // let listSort = [] ;
+        // useEffect(() => {
+        //     const storedReadBooks = useLocalStorage();
+        //     console.log(storedReadBooks)
+        //     if (books.length > 0) {
+        //         const booksRead = [];
+        //         for (const id of storedReadBooks) {
+        //             const book = books.find(book => book.bookId === id);
+        //             if (book) {
+        //                 booksRead.push(book);
+        //             }
+        //         }
+        //         setBookReads(booksRead);
+        //     }
+        // }, [books]);
+        // const handleBooksFilter = (filter) => {
+
+        //     if (filter === 'bookId') {
+        //         const sortList = bookReads.map(name => name)
+        //         sortList.sort();
+        //         sortList.reverse();
+        //         setBookReads(sortList);
+        //     }
+        //     else if (filter === 'totalPages') {
+        //         const sortedName = bookReads.map(name => name.totalPages);
+        //         sortedName.sort();
+        //         sortedName.reverse();
+
+        //         const sortList = bookReads.map(name => name);
+
+        //         for (const singleName of sortedName) {
+        //             for (const objName of sortList) {
+        //                 if (singleName === objName.totalPages) {
+        //                     listSort.push(objName);
+        //                     setBookReads(listSort);
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     else if (filter === 'rating') {
+        //         const sortRating = bookReads.map(rating => rating.rating);
+        //         console.log(sortRating)
+        //         sortRating.sort();
+        //         sortRating.reverse();
+
+        //         const sortObj = bookReads.map(rating => rating);
+
+        //         for (const sortedRating of sortRating) {
+        //             for (const sortedObj of sortObj) {
+        //                 if (sortedRating === sortedObj.rating) {
+        //                     listSort.push(sortedObj)
+        //                     setBookReads(listSort)
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     else if (filter === 'yearOfPublishing') {
+        //         const sortRating = bookReads.map(rating => rating.rating);
+        //         console.log(sortRating)
+        //         sortRating.sort();
+        //         sortRating.reverse();
+
+        //         const sortObj = bookReads.map(rating => rating);
+
+        //         for (const sortedRating of sortRating) {
+        //             for (const sortedObj of sortObj) {
+        //                 if (sortedRating === sortedObj.rating) {
+        //                     listSort.push(sortedObj)
+        //                     setBookReads(listSort)
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
     return (
         <div>
@@ -19,8 +96,9 @@ const Booklist = () => {
                                 Short by
                             </summary>
                             <ul class="p-2 bg-base-100 rounded-t-none ">
-                                <li><a className='bg-green-500 hover:bg-green-500 text-white'>Link 1</a></li>
-                                <li><a className='bg-green-500 hover:bg-green-500 text-white '>Link2</a></li>
+                                <li onClick={() => handleBooksFilter('rating')}><a className='bg-green-500 hover:bg-green-500 text-white'>Rating</a></li>
+                                <li onClick={() => handleBooksFilter('totalPages')}><a className='bg-green-500 hover:bg-green-500 text-white w-40 mt-1'>Number of Pages</a></li>
+                                <li onClick={() => handleBooksFilter('yearOfPublishing')}><a className='bg-green-500 hover:bg-green-500 text-white mt-1'>Publishing Year</a></li>
                             </ul>
                         </details>
                     </li>
